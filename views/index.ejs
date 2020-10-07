@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Baltic Countries</title>
+</head>
+<body>
+    <form action="/" method="POST">
+        <select name="country">
+            <option value="Estonia">Estonia</option>
+            <option value="Latvia">Latvia</option>
+            <option value="Lithuania">Lithuania</option>
+        </select>
+        <button type="submit">Show Country Data</button>
+    </form>
+    <table>
+        <h1><%= countr.name %></h1>
+        <tr>
+            <th>Name</th>
+            <td><%= countr.name %></td>
+        </tr>
+        <tr>
+            <th>Top Level Domain</th>
+            <td><%= countr.topLevelDomain %></td>
+        </tr>
+        <tr>
+            <th>Calling code</th>
+            <td><%= countr.callingCodes %></td>
+        </tr>
+        <tr>
+            <th>Capital</th>
+            <td><%= countr.capital %></td>
+        </tr>
+        <tr>
+            <th>Region</th>
+            <td><%= countr.region %></td>
+        </tr>
+        <tr>
+            <th>Subregion</th>
+            <td><%= countr.subregion %></td>
+        </tr>
+        <tr>
+            <th>Population</th>
+            <td><%= countr.population %></td>
+        </tr>
+        <tr>
+            <th>Timezones</th>
+            <td><%= countr.timezones %></td>
+        </tr>
+        <tr>
+            <th>Language</th>
+            <td><%= countr.languages[0].name %></td>
+        </tr>
+        <tr>
+            <th>Currencie</th>
+            <td><%= countr.currencies[0].code %> <%= countr.currencies[0].name %> <%= countr.currencies[0].symbol %></td>
+        </tr>
+        <tr>
+            <th>Flag</th>
+            <td><img src="<%= countr.flag %>"></td>
+        </tr>
+    </table>
+</body>
+</html>
