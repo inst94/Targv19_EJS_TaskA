@@ -11,7 +11,9 @@ app.set('view engine', ejs);
 
 app.get('/', (req, res)=> {
     
-    res.render('index.ejs', {countr: ''
+    res.render('index.ejs', {countr: '',
+                            lang: '',
+                            cur: ''
                             });
 });
 
@@ -22,7 +24,12 @@ app.post('/', (req, res) => {
     .then(function(response){
         console.log(response);
         let countryObject = response.data[0];
-        res.render('index.ejs', {countr: countryObject});
+        let languageObject = response.data[0].languages[0];
+        let currencieObject = response.data[0].currencies[0];
+        res.render('index.ejs', {countr: countryObject,
+                                lang: languageObject,
+                                cur: currencieObject
+                                });
     })
     .catch(function(error){
         console.log(error);
